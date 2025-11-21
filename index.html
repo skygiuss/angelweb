@@ -321,6 +321,35 @@
             border-left: 4px solid #4caf50;
         }
         
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
         /* Footer */
         footer {
             background: var(--dark);
@@ -361,6 +390,17 @@
             background: var(--accent);
             transform: translateY(-3px);
             color: white;
+        }
+        
+        /* Image Fallback */
+        .image-fallback {
+            background: linear-gradient(45deg, var(--primary), var(--dark));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
         }
         
         /* Responsive */
@@ -432,6 +472,9 @@
                         <a class="nav-link" href="#productos">Productos</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#cotizador">Cotizador</a>
                     </li>
                 </ul>
@@ -473,7 +516,7 @@
                         <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/empresa/camiones.jpg" 
                              alt="Flota de camiones de Agregados Angel" 
                              class="img-fluid"
-                             onerror="this.onerror=null; this.parentElement.className='about-img image-fallback'; this.parentElement.innerHTML='<i class=\"fas fa-truck-moving\"></i><span>Nuestra Flota de Camiones</span>';">
+                             onerror="this.onerror=null; this.parentElement.className='about-img image-fallback'; this.parentElement.innerHTML='<div style=\"padding: 2rem; text-align: center;\"><i class=\"fas fa-truck-moving fa-3x mb-3\"></i><h4>Nuestra Flota de Camiones</h4><p>3 camiones + cargador frontal</p></div>';">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -498,6 +541,24 @@
                                 <div>
                                     <h6 class="mb-0">Entrega a Obra</h6>
                                     <small>En todo Cusco</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-award fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="mb-0">Calidad Garantizada</h6>
+                                    <small>Materiales certificados</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-clock fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="mb-0">Entrega Rápida</h6>
+                                    <small>24-48 horas</small>
                                 </div>
                             </div>
                         </div>
@@ -548,7 +609,7 @@
                         <div class="product-img">
                             <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/productos/arena-fina.jpg" 
                                  alt="Arena Fina"
-                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<i class=\"fas fa-mountain\"></i><span>Arena Fina</span>';">
+                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<div style=\"padding: 2rem; text-align: center;\"><i class=\"fas fa-mountain fa-3x mb-3\"></i><h5>Arena Fina</h5></div>';">
                         </div>
                         <div class="product-info">
                             <h4>Arena Fina</h4>
@@ -562,7 +623,7 @@
                         <div class="product-img">
                             <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/productos/arena-gruesa.jpg" 
                                  alt="Arena Gruesa"
-                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<i class=\"fas fa-mountain\"></i><span>Arena Gruesa</span>';">
+                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<div style=\"padding: 2rem; text-align: center;\"><i class=\"fas fa-mountain fa-3x mb-3\"></i><h5>Arena Gruesa</h5></div>';">
                         </div>
                         <div class="product-info">
                             <h4>Arena Gruesa</h4>
@@ -576,7 +637,7 @@
                         <div class="product-img">
                             <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/productos/piedra-chancada.jpg" 
                                  alt="Piedra Chancada"
-                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<i class=\"fas fa-gem\"></i><span>Piedra Chancada</span>';">
+                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<div style=\"padding: 2rem; text-align: center;\"><i class=\"fas fa-gem fa-3x mb-3\"></i><h5>Piedra Chancada</h5></div>';">
                         </div>
                         <div class="product-info">
                             <h4>Piedra Chancada</h4>
@@ -590,7 +651,7 @@
                         <div class="product-img">
                             <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/productos/hormigon.jpg" 
                                  alt="Hormigón"
-                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<i class=\"fas fa-cubes\"></i><span>Hormigón</span>';">
+                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<div style=\"padding: 2rem; text-align: center;\"><i class=\"fas fa-cubes fa-3x mb-3\"></i><h5>Hormigón</h5></div>';">
                         </div>
                         <div class="product-info">
                             <h4>Hormigón</h4>
@@ -598,6 +659,38 @@
                             <div class="product-price">S/. 120 por m³</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="mission-vision">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <h4>Venta de Materiales</h4>
+                    <p>Comercialización de agregados y materiales de construcción de la más alta calidad.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h4>Transporte y Entrega</h4>
+                    <p>Servicio de transporte con nuestra flota propia hasta el lugar de la obra.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h4>Asesoría Técnica</h4>
+                    <p>Asesoramiento profesional para seleccionar los materiales ideales para tu proyecto.</p>
                 </div>
             </div>
         </div>
