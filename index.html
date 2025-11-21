@@ -84,7 +84,7 @@
             border-radius: 5px;
         }
         
-        /* Hero Section - CORREGIDA EXTENSIÓN .avif */
+        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), 
                         url('https://raw.githubusercontent.com/skygiuss/angelweb/main/images/hero/construccion-hero.avif');
@@ -95,19 +95,6 @@
             padding: 120px 0 80px;
             margin-top: 76px;
             position: relative;
-        }
-        
-        /* Fallback para imagen .avif */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
-            z-index: -1;
-            display: none;
         }
         
         .hero h1 {
@@ -167,10 +154,67 @@
             border-radius: 2px;
         }
         
-        /* Products Section - MEJORADO ALINEACIÓN */
-        .products-container {
+        /* About Section */
+        .about-img {
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .about-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Mission Vision */
+        .mission-vision {
+            background: var(--light);
+        }
+        
+        .mv-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            height: 100%;
+            transition: transform 0.3s;
+            border-top: 4px solid var(--accent);
+        }
+        
+        .mv-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .mv-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* Products Section - 4 PRODUCTOS EN 1 LÍNEA */
+        .products-row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             align-items: stretch;
         }
@@ -193,7 +237,7 @@
         }
         
         .product-img {
-            height: 200px;
+            height: 180px;
             overflow: hidden;
             background: #f8f9fa;
             display: flex;
@@ -223,20 +267,21 @@
         .product-title {
             color: var(--primary);
             margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-            min-height: 3rem;
+            font-size: 1.2rem;
+            min-height: 2.5rem;
         }
         
         .product-description {
             color: #666;
             margin-bottom: 1rem;
             flex-grow: 1;
+            font-size: 0.9rem;
         }
         
         .product-price {
             color: var(--secondary);
             font-weight: 700;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
         }
         
@@ -250,10 +295,11 @@
             background: var(--accent);
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 5px;
             flex: 1;
             transition: all 0.3s;
+            font-size: 0.9rem;
         }
         
         .btn-cart:hover {
@@ -265,6 +311,12 @@
         .emarket-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+        }
+        
+        .emarket-products {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
         }
         
         .cart-sidebar {
@@ -299,6 +351,37 @@
             border-radius: 8px;
         }
         
+        /* Quote Section */
+        .quote-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            color: #333;
+        }
+        
+        .form-control, .form-select {
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 0.2rem rgba(243, 156, 18, 0.25);
+        }
+        
+        .quote-result {
+            background: #e8f5e9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            display: none;
+            border-left: 4px solid #4caf50;
+        }
+        
         /* Shopping Cart Badge */
         .cart-badge {
             background: var(--secondary);
@@ -325,7 +408,59 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-section h5 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-section i {
+            color: var(--accent);
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            margin-right: 10px;
+            transition: all 0.3s;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            color: white;
+        }
+        
         /* Responsive */
+        @media (max-width: 1200px) {
+            .products-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .emarket-products {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.2rem;
@@ -351,8 +486,12 @@
                 height: 45px;
             }
             
-            .products-container {
+            .products-row {
                 grid-template-columns: 1fr;
+            }
+            
+            .product-img {
+                height: 200px;
             }
         }
     </style>
@@ -362,7 +501,6 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <!-- LOGO MEJORADO EN CABECERA - RUTA CORREGIDA -->
                 <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/icons/logo.png" 
                      alt="Agregados Angel - Materiales de Construcción" 
                      class="logo-header"
@@ -379,6 +517,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mision-vision">Misión y Visión</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#productos">Productos</a>
@@ -403,7 +544,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section - EXTENSIÓN CORREGIDA A .avif -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="container">
             <div class="row align-items-center">
@@ -464,14 +605,43 @@
         </div>
     </section>
 
-    <!-- Products Section - MEJORADA -->
+    <!-- Mission & Vision Section -->
+    <section id="mision-vision" class="mission-vision">
+        <div class="container">
+            <div class="section-title">
+                <h2>Misión y Visión</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="mv-card">
+                        <div class="mv-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Misión</h3>
+                        <p>Proveer materiales de construcción de alta calidad en la ciudad del Cusco, ofreciendo un servicio confiable y personalizado que satisfaga las necesidades de nuestros clientes, contribuyendo al desarrollo de infraestructuras sólidas y duraderas en nuestra región.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mv-card">
+                        <div class="mv-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Visión</h3>
+                        <p>Ser la empresa líder en la comercialización de agregados y materiales de construcción en Cusco, reconocida por nuestra calidad, servicio al cliente y contribución al crecimiento sostenible de la construcción en nuestra región.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section - 4 PRODUCTOS EN 1 LÍNEA -->
     <section id="productos">
         <div class="container">
             <div class="section-title">
                 <h2>Nuestros Productos</h2>
                 <p class="lead">Materiales de construcción de la más alta calidad</p>
             </div>
-            <div class="products-container" id="productsGrid">
+            <div class="products-row" id="productsGrid">
                 <!-- Los productos se cargan dinámicamente con JavaScript -->
             </div>
         </div>
@@ -486,7 +656,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="row g-4" id="emarketProducts">
+                    <div class="emarket-products" id="emarketProducts">
                         <!-- Productos del e-market -->
                     </div>
                 </div>
@@ -579,7 +749,6 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="footer-section">
                         <h5>
-                            <!-- LOGO FOOTER - RUTA CORREGIDA -->
                             <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/icons/logo.png" 
                                  alt="Agregados Angel" 
                                  height="30"
@@ -588,6 +757,11 @@
                             Agregados Angel
                         </h5>
                         <p>Especialistas en materiales de construcción en Cusco. Entrega directa a obra con nuestra flota de camiones y cargador frontal.</p>
+                        <div class="social-links mt-3">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -667,8 +841,7 @@
                 const productCard = `
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="${product.image}" alt="${product.name}"
-                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+${product.name}</text></svg>'">
+                            <img src="${product.image}" alt="${product.name}">
                         </div>
                         <div class="product-info">
                             <h4 class="product-title">${product.name}</h4>
@@ -681,22 +854,19 @@
 
                 // Productos en e-market
                 const emarketCard = `
-                    <div class="col-md-6">
-                        <div class="product-card">
-                            <div class="product-img">
-                                <img src="${product.image}" alt="${product.name}"
-                                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+${product.name}</text></svg>'">
-                            </div>
-                            <div class="product-info">
-                                <h4 class="product-title">${product.name}</h4>
-                                <p class="product-description">${product.description}</p>
-                                <div class="product-price">S/. ${product.price} por m³</div>
-                                <div class="product-actions">
-                                    <input type="number" class="form-control" id="qty-${product.id}" value="1" min="1" style="width: 80px;">
-                                    <button class="btn-cart" onclick="addToCart(${product.id})">
-                                        <i class="fas fa-cart-plus"></i> Agregar
-                                    </button>
-                                </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="${product.image}" alt="${product.name}">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">${product.name}</h4>
+                            <p class="product-description">${product.description}</p>
+                            <div class="product-price">S/. ${product.price} por m³</div>
+                            <div class="product-actions">
+                                <input type="number" class="form-control" id="qty-${product.id}" value="1" min="1" style="width: 80px;">
+                                <button class="btn-cart" onclick="addToCart(${product.id})">
+                                    <i class="fas fa-cart-plus"></i> Agregar
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -782,8 +952,64 @@
             updateCart();
         }
 
+        // Manejar el formulario de cotización
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+            const email = document.getElementById('customerEmail').value;
+            const productId = document.getElementById('productSelect').value;
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const location = document.getElementById('deliveryLocation').value;
+            const message = document.getElementById('additionalMessage').value;
+            
+            if (!productId) {
+                alert('Por favor seleccione un producto.');
+                return;
+            }
+            
+            const product = products.find(p => p.id == productId);
+            const price = product.price;
+            const subtotal = price * quantity;
+            
+            let shippingCost = location ? 80 : 65;
+            const total = subtotal + shippingCost;
+            
+            const resultDiv = document.getElementById('quoteResult');
+            resultDiv.innerHTML = `
+                <h4 class="mb-3">📋 Cotización Generada</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Cliente:</strong> ${name}</p>
+                        <p><strong>Teléfono:</strong> ${phone}</p>
+                        ${email ? `<p><strong>Email:</strong> ${email}</p>` : ''}
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Producto:</strong> ${product.name}</p>
+                        <p><strong>Cantidad:</strong> ${quantity} m³</p>
+                        ${location ? `<p><strong>Ubicación:</strong> ${location}</p>` : ''}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-12">
+                        <p><strong>Subtotal:</strong> S/. ${subtotal}</p>
+                        <p><strong>Costo de envío:</strong> S/. ${shippingCost}</p>
+                        <h5 class="text-success"><strong>Total: S/. ${total}</strong></h5>
+                    </div>
+                </div>
+                ${message ? `<hr><p><strong>Mensaje:</strong> ${message}</p>` : ''}
+                <div class="alert alert-info mt-3">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>¡Cotización enviada!</strong> Nos contactaremos con usted dentro de las próximas 24 horas para confirmar su pedido.
+                </div>
+            `;
+            resultDiv.style.display = 'block';
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+
         function showNotification(message) {
-            // Crear notificación temporal
             const notification = document.createElement('div');
             notification.className = 'alert alert-success position-fixed';
             notification.style.cssText = 'top: 100px; right: 20px; z-index: 9999;';
