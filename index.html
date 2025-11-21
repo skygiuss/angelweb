@@ -73,7 +73,7 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), 
-                        url('images/hero/construccion-hero.jpg');
+                        url('https://raw.githubusercontent.com/skygiuss/angelweb/main/images/hero/construccion-hero.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -93,6 +93,7 @@
             bottom: 0;
             background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
             z-index: -1;
+            display: none; /* Solo se muestra si falla la imagen */
         }
         
         .hero h1 {
@@ -330,6 +331,23 @@
             color: white;
         }
         
+        /* Image Fallback Styles */
+        .image-fallback {
+            background: linear-gradient(45deg, #34495e, #2c3e50);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-size: 1.2rem;
+        }
+        
+        .image-fallback i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -351,18 +369,6 @@
             .product-img {
                 height: 200px;
             }
-        }
-        
-        /* Loading states for images */
-        .image-loading {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-        }
-        
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
         }
     </style>
 </head>
@@ -410,7 +416,6 @@
                     </a>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <!-- Espacio para logo o imagen adicional -->
                     <div class="mt-4">
                         <i class="fas fa-truck-loading fa-5x text-warning"></i>
                     </div>
@@ -428,10 +433,10 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4">
                     <div class="about-img">
-                        <img src="images/empresa/equipo.jpg" 
-                             alt="Equipo de Agregados Angel" 
+                        <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/empresa/camiones.jpg" 
+                             alt="Flota de camiones de Agregados Angel" 
                              class="img-fluid"
-                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkFHRVJFREFET1MgQU5HRUw8L3RleHQ+PHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjEuNWVtIj5Fc3BhY2lvIHBhcmEgaW1hZ2VuIGRlIGxhIGVtcHJlc2E8L3RleHQ+PC9zdmc+'">
+                             onerror="this.onerror=null; this.parentElement.className='about-img image-fallback'; this.parentElement.innerHTML='<i class=\"fas fa-truck-moving\"></i><span>Nuestra Flota de Camiones</span>';">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -504,9 +509,9 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="images/productos/arena-fina.jpg" 
+                            <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/productos/arena-fina.jpg" 
                                  alt="Arena Fina"
-                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjYzViNTliIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QXJlbmEgRmluYTwvdGV4dD48L3N2Zz4='">
+                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<i class=\"fas fa-mountain\"></i><span>Arena Fina</span>';">
                         </div>
                         <div class="product-info">
                             <h4>Arena Fina</h4>
@@ -518,9 +523,9 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="images/productos/arena-gruesa.jpg" 
+                            <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/productos/arena-gruesa.jpg" 
                                  alt="Arena Gruesa"
-                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjOGM3YjZiIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QXJlbmEgR3J1ZXNhPC90ZXh0Pjwvc3ZnPg=='">
+                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<i class=\"fas fa-mountain\"></i><span>Arena Gruesa</span>';">
                         </div>
                         <div class="product-info">
                             <h4>Arena Gruesa</h4>
@@ -532,9 +537,9 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="images/productos/piedra-chancada.jpg" 
+                            <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/productos/piedra-chancada.jpg" 
                                  alt="Piedra Chancada"
-                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjYTlhOWE5Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UGllZHJhIENoYW5jYWRhPC90ZXh0Pjwvc3ZnPg=='">
+                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<i class=\"fas fa-gem\"></i><span>Piedra Chancada</span>';">
                         </div>
                         <div class="product-info">
                             <h4>Piedra Chancada</h4>
@@ -546,9 +551,9 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="images/productos/hormigon.jpg" 
+                            <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/productos/hormigon.jpg" 
                                  alt="Hormigón"
-                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZDRjOWIwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SG9ybWlnw7NuPC90ZXh0Pjwvc3ZnPg=='">
+                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<i class=\"fas fa-cubes\"></i><span>Hormigón</span>';">
                         </div>
                         <div class="product-info">
                             <h4>Hormigón</h4>
@@ -782,4 +787,27 @@
         });
 
         // Animación al hacer scroll
-        window.addEventListener('scroll', function()
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Verificar si las imágenes cargan correctamente
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    console.log('Error cargando imagen:', this.src);
+                });
+                img.addEventListener('load', function() {
+                    console.log('Imagen cargada correctamente:', this.src);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
