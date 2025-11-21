@@ -57,13 +57,48 @@
             color: white !important;
             display: flex;
             align-items: center;
+            gap: 12px;
         }
         
-        .logo-img {
-            height: 40px;
-            width: auto;
-            margin-right: 10px;
-            border-radius: 4px;
+        /* LOGO OPTIMIZADO PARA 478×454px */
+        .logo-header {
+            height: 50px;
+            width: 50px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-header:hover {
+            transform: scale(1.05);
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .logo-hero {
+            height: 140px;
+            width: 140px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .logo-hero:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+        }
+        
+        .logo-footer {
+            height: 35px;
+            width: 35px;
+            object-fit: contain;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.1);
+            padding: 3px;
         }
         
         .nav-link {
@@ -90,8 +125,281 @@
             position: relative;
         }
         
-        /* Resto del CSS permanece igual... */
-        /* ... (todo el CSS anterior se mantiene igual) ... */
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .btn-primary {
+            background: var(--secondary);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-img {
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .about-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Mission Vision */
+        .mission-vision {
+            background: var(--light);
+        }
+        
+        .mv-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            height: 100%;
+            transition: transform 0.3s;
+            border-top: 4px solid var(--accent);
+        }
+        
+        .mv-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .mv-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* Products Section */
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            height: 100%;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-price {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+        }
+        
+        .quote-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            color: #333;
+        }
+        
+        .form-control, .form-select {
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 0.2rem rgba(243, 156, 18, 0.25);
+        }
+        
+        .quote-result {
+            background: #e8f5e9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            display: none;
+            border-left: 4px solid #4caf50;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-section h5 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-section i {
+            color: var(--accent);
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            margin-right: 10px;
+            transition: all 0.3s;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .product-img {
+                height: 200px;
+            }
+            
+            .logo-hero {
+                height: 100px;
+                width: 100px;
+                margin-top: 2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .logo-header {
+                height: 40px;
+                width: 40px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -99,10 +407,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <!-- LOGO PRINCIPAL -->
+                <!-- LOGO HEADER OPTIMIZADO -->
                 <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/logo/logo.png" 
                      alt="Agregados Angel - Materiales de Construcción" 
-                     class="logo-img"
+                     class="logo-header"
                      onerror="this.style.display='none'">
                 Agregados Angel
             </a>
@@ -143,20 +451,227 @@
                     </a>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <!-- Logo adicional en hero (opcional) -->
-                    <div class="hero-logo">
-                        <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/logo/logo.png" 
-                             alt="Agregados Angel" 
-                             height="120"
-                             style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);"
-                             onerror="this.style.display='none'">
+                    <!-- LOGO HERO OPTIMIZADO -->
+                    <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/logo/logo.png" 
+                         alt="Agregados Angel" 
+                         class="logo-hero"
+                         onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre Nosotros</h2>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    <div class="about-img">
+                        <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/empresa/camiones.jpg" 
+                             alt="Flota de camiones de Agregados Angel" 
+                             class="img-fluid"
+                             onerror="this.onerror=null; this.parentElement.className='about-img image-fallback'; this.parentElement.innerHTML='<i class=\"fas fa-truck-moving\"></i><span>Nuestra Flota de Camiones</span>';">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Expertos en Materiales de Construcción</h3>
+                    <p class="mb-3"><strong>Agregados Angel</strong> es una empresa con amplia experiencia en la venta y distribución de materiales de construcción en la ciudad del Cusco y sus alrededores.</p>
+                    <p class="mb-3">Nos especializamos en la comercialización de agregados para la construcción, contando con una flota de <strong>3 camiones</strong> y un <strong>cargador frontal</strong> que nos permite ofrecer un servicio completo que incluye la entrega directa en la obra de nuestros clientes.</p>
+                    <p>Nuestro compromiso es brindar productos de calidad, precios competitivos y un servicio personalizado que satisfaga las necesidades de cada proyecto de construcción.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-truck fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="mb-0">Flota Propia</h6>
+                                    <small>3 camiones + cargador</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-map-marker-alt fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="mb-0">Entrega a Obra</h6>
+                                    <small>En todo Cusco</small>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ... resto de las secciones se mantienen igual ... -->
+    <!-- Mission & Vision -->
+    <section id="mision-vision" class="mission-vision">
+        <div class="container">
+            <div class="section-title">
+                <h2>Misión y Visión</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="mv-card">
+                        <div class="mv-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Misión</h3>
+                        <p>Proveer materiales de construcción de alta calidad en la ciudad del Cusco, ofreciendo un servicio confiable y personalizado que satisfaga las necesidades de nuestros clientes, contribuyendo al desarrollo de infraestructuras sólidas y duraderas en nuestra región.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mv-card">
+                        <div class="mv-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Visión</h3>
+                        <p>Ser la empresa líder en la comercialización de agregados y materiales de construcción en Cusco, reconocida por nuestra calidad, servicio al cliente y contribución al crecimiento sostenible de la construcción en nuestra región.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="productos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Productos</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/productos/arena-fina.jpg" 
+                                 alt="Arena Fina"
+                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<i class=\"fas fa-mountain\"></i><span>Arena Fina</span>';">
+                        </div>
+                        <div class="product-info">
+                            <h4>Arena Fina</h4>
+                            <p class="text-muted">Ideal para acabados y mezclas de calidad superior.</p>
+                            <div class="product-price">S/. 80 por m³</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/productos/arena-gruesa.jpg" 
+                                 alt="Arena Gruesa"
+                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<i class=\"fas fa-mountain\"></i><span>Arena Gruesa</span>';">
+                        </div>
+                        <div class="product-info">
+                            <h4>Arena Gruesa</h4>
+                            <p class="text-muted">Perfecta para estructuras y cimentaciones.</p>
+                            <div class="product-price">S/. 75 por m³</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/productos/piedra-chancada.jpg" 
+                                 alt="Piedra Chancada"
+                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<i class=\"fas fa-gem\"></i><span>Piedra Chancada</span>';">
+                        </div>
+                        <div class="product-info">
+                            <h4>Piedra Chancada</h4>
+                            <p class="text-muted">Material esencial para concreto de alta resistencia.</p>
+                            <div class="product-price">S/. 95 por m³</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/productos/hormigon.jpg" 
+                                 alt="Hormigón"
+                                 onerror="this.onerror=null; this.parentElement.className='product-img image-fallback'; this.parentElement.innerHTML='<i class=\"fas fa-cubes\"></i><span>Hormigón</span>';">
+                        </div>
+                        <div class="product-info">
+                            <h4>Hormigón</h4>
+                            <p class="text-muted">Mezcla lista para uso en diferentes resistencias.</p>
+                            <div class="product-price">S/. 120 por m³</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section id="cotizador" class="quote-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Cotizador de Materiales</h2>
+                <p class="lead" style="color: #ecf0f1;">Solicita tu cotización en línea y te responderemos a la brevedad</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="quote-form">
+                        <form id="quoteForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Nombre Completo *</label>
+                                        <input type="text" class="form-control" id="customerName" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Teléfono *</label>
+                                        <input type="tel" class="form-control" id="customerPhone" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" id="customerEmail">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Producto *</label>
+                                <select class="form-select" id="productSelect" required>
+                                    <option value="">Seleccione un producto</option>
+                                    <option value="arena_fina">Arena Fina - S/.80 por m³</option>
+                                    <option value="arena_gruesa">Arena Gruesa - S/.75 por m³</option>
+                                    <option value="piedra_chancada">Piedra Chancada - S/.95 por m³</option>
+                                    <option value="hormigon">Hormigón - S/.120 por m³</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Cantidad (m³) *</label>
+                                        <input type="number" class="form-control" id="quantity" min="1" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Ubicación de Entrega</label>
+                                        <input type="text" class="form-control" id="deliveryLocation" placeholder="Distrito, dirección...">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Mensaje Adicional</label>
+                                <textarea class="form-control" id="additionalMessage" rows="3" placeholder="Especificaciones adicionales..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="fas fa-paper-plane me-2"></i>Solicitar Cotización
+                            </button>
+                        </form>
+                        <div class="quote-result" id="quoteResult">
+                            <!-- Resultado de la cotización -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -165,11 +680,10 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="footer-section">
                         <h5>
-                            <!-- LOGO EN FOOTER -->
+                            <!-- LOGO FOOTER OPTIMIZADO -->
                             <img src="https://raw.githubusercontent.com/skygiuss/angelweb/main/images/logo/logo.png" 
                                  alt="Agregados Angel" 
-                                 height="30"
-                                 class="me-2"
+                                 class="logo-footer"
                                  onerror="this.style.display='none'">
                             Agregados Angel
                         </h5>
@@ -181,11 +695,150 @@
                         </div>
                     </div>
                 </div>
-                <!-- ... resto del footer ... -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h5>Contacto</h5>
+                        <p><i class="fas fa-phone"></i> (084) 123-456</p>
+                        <p><i class="fas fa-envelope"></i> info@agregadosangel.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Cusco, Perú</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h5>Horario de Atención</h5>
+                        <p><i class="fas fa-clock"></i> Lunes a Viernes: 7:00 am - 6:00 pm</p>
+                        <p><i class="fas fa-clock"></i> Sábados: 7:00 am - 1:00 pm</p>
+                        <p><i class="fas fa-clock"></i> Domingos: Cerrado</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-3 border-top border-secondary">
+                <p>&copy; 2023 Agregados Angel. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- ... resto del JavaScript ... -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Precios de productos
+        const productPrices = {
+            'arena_fina': 80,
+            'arena_gruesa': 75,
+            'piedra_chancada': 95,
+            'hormigon': 120
+        };
+
+        // Nombres de productos
+        const productNames = {
+            'arena_fina': 'Arena Fina',
+            'arena_gruesa': 'Arena Gruesa',
+            'piedra_chancada': 'Piedra Chancada',
+            'hormigon': 'Hormigón'
+        };
+
+        // Manejar el formulario de cotización
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener valores del formulario
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+            const email = document.getElementById('customerEmail').value;
+            const product = document.getElementById('productSelect').value;
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const location = document.getElementById('deliveryLocation').value;
+            const message = document.getElementById('additionalMessage').value;
+            
+            // Validaciones
+            if (!product) {
+                alert('Por favor seleccione un producto.');
+                return;
+            }
+            
+            if (!quantity || quantity <= 0) {
+                alert('Por favor ingrese una cantidad válida.');
+                return;
+            }
+            
+            // Calcular cotización
+            const price = productPrices[product];
+            const subtotal = price * quantity;
+            
+            // Calcular costo de envío
+            let shippingCost = 0;
+            if (location) {
+                if (location.toLowerCase().includes('cusco') || location.toLowerCase().includes('centro')) {
+                    shippingCost = 50;
+                } else {
+                    shippingCost = 80;
+                }
+            } else {
+                shippingCost = 65;
+            }
+            
+            const total = subtotal + shippingCost;
+            
+            // Mostrar resultado
+            const resultDiv = document.getElementById('quoteResult');
+            resultDiv.innerHTML = `
+                <h4 class="mb-3">📋 Cotización Generada</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Cliente:</strong> ${name}</p>
+                        <p><strong>Teléfono:</strong> ${phone}</p>
+                        ${email ? `<p><strong>Email:</strong> ${email}</p>` : ''}
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Producto:</strong> ${productNames[product]}</p>
+                        <p><strong>Cantidad:</strong> ${quantity} m³</p>
+                        ${location ? `<p><strong>Ubicación:</strong> ${location}</p>` : ''}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-12">
+                        <p><strong>Subtotal:</strong> S/. ${subtotal}</p>
+                        <p><strong>Costo de envío:</strong> S/. ${shippingCost}</p>
+                        <h5 class="text-success"><strong>Total: S/. ${total}</strong></h5>
+                    </div>
+                </div>
+                ${message ? `<hr><p><strong>Mensaje:</strong> ${message}</p>` : ''}
+                <div class="alert alert-info mt-3">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>¡Cotización enviada!</strong> Nos contactaremos con usted dentro de las próximas 24 horas para confirmar su pedido.
+                </div>
+            `;
+            resultDiv.style.display = 'block';
+            
+            // Scroll to result
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Smooth scroll para navegación
+        document.querySelectorAll('a.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animación al hacer scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
